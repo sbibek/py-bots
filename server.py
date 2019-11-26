@@ -41,7 +41,7 @@ def attack():
 def runner():
     while True:
         attack()
-        time.sleep(5)
+        time.sleep(attack_interval)
 
 try:
     thread.start_new_thread(runner,())
