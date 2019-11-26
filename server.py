@@ -41,6 +41,7 @@ def attack():
 def runner():
     while True:
         attack()
+        print("[cnc] attacks sent")
         time.sleep(attack_interval)
 
 try:
