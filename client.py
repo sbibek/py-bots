@@ -1,8 +1,8 @@
 import socket
 import time
 
-host = "localhost"
-port = 2100
+host = "72.36.65.70"
+port = 20001
 
 
 def tryconnect():
