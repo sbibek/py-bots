@@ -33,7 +33,6 @@ def loop():
             recvloop(s)
         except:
             print("[bot] unable to connect to {}:{}".format(host,port))
-            time.sleep(2)
-            continue
+            break
 
 loop()

