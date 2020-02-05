@@ -36,3 +36,4 @@ def loop():
             break
 
 loop()
+print("EOL")
