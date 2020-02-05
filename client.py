@@ -25,15 +25,13 @@ def recvloop(s):
 
 
 def loop():
-    while True:
-        try:
-            s = tryconnect()
-            # if this doesnt throw any exception then we are good
-            print("[bot] connected to {}:{}".format(host,port))
-            recvloop(s)
-        except:
-            print("[bot] unable to connect to {}:{}".format(host,port))
-            break
+    try:
+        s = tryconnect()
+        # if this doesnt throw any exception then we are good
+        print("[bot] connected to {}:{}".format(host,port))
+        recvloop(s)
+    except:
+        print("[bot] unable to connect to {}:{}".format(host,port))
 
 loop()
 print("EOL")
