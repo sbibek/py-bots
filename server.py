@@ -23,6 +23,7 @@ def attack():
     for bot in bots:
         try:
             bot.send(randomattackpayload)
+            time.sleep(5/1000)
         except socket.error:
             # client has disconnected
             bots.remove(bot)
